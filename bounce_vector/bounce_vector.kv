@@ -1,0 +1,27 @@
+#:kivy 1.10.1
+
+<Paddle>:
+    size: 50, 250
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+<BounceVector>:
+    size: 10, 10
+
+    canvas:
+        Color:
+            rgb: 1, 0, 0
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+
+<BounceVectorGame>:
+    player: player
+
+    Paddle:
+        id: player
+        center: root.center
