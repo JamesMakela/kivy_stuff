@@ -18,14 +18,13 @@ program like this:
 
 # Improvements
 
-- None yet
+- Made it an actual game, with a start and an end.
+  - The game contains a modal with a start and a quit button
+  - The game ends when one player achieves a certain score.
+- Demo mode game play when the game hasn't started yet.
 
 # Todo Items
 
-- Make it an actual game, with a start and an end.
-  The game might contain a modal button that starts a game,
-  and the game could end when one player achieves a certain score.
-- While we're at it, a Quit button would be nice.
 - Right now the ball speeds up as the game progresses.
   This is most likely a side-effect of the paddle collision behavior,
   but it does make the game more interesting.  But if the ball goes
@@ -35,5 +34,5 @@ program like this:
   algorithm for the ball-to-paddle collision detection.
 - If the application loses focus, the game does not pause.  This can
   happen quite easily when playing with a mouse on a windowing environment,
-  and it is annoying to lose a ball just because you clicked on a window
-  in the background.
+  and it is annoying to lose a ball just because you accidentally clicked
+  on a window in the background.
