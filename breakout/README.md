@@ -9,5 +9,5 @@ program like this:
 
 ```
 > cd <program_directory>
-> python bounce_vector.py
+> python breakout.py
 ```
