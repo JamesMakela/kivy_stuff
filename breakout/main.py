@@ -1,7 +1,7 @@
 from random import randint, random
 
 import kivy
-kivy.require('1.10.1')  # replace with your current kivy version !
+kivy.require('1.10.0')  # replace with your current kivy version !
 
 from kivy.base import EventLoop
 from kivy.app import App
