@@ -199,8 +199,13 @@ class BreakoutGame(Widget):
     def serve_ball(self):
         self.ball.center = (self.player.center_x,
                             self.player.top + self.ball.height / 2)
-        direction = randint(10, 170)
-        self.ball.velocity = Vector(4, 0).rotate(direction)
+        direction = randint(15, 165)
+
+        # velocity needs to scale with the resolution of the game window
+        # or the ball will appear to be very fast on small screens and
+        # very slow on hi-res screens.
+        scaled_velocity = min(*self.size) * 0.0067
+        self.ball.velocity = Vector(scaled_velocity, 0).rotate(direction)
 
     def bounce_off_walls(self):
         ''' bounce off left, right, and top walls '''
