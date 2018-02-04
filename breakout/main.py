@@ -106,6 +106,7 @@ class StartGameModal(ModalView):
     def dismiss(self, *args, **kwargs):
         self.root.reset_game()
         self.root.game_in_play = True
+        self.root.serve_ball()
 
         super(StartGameModal, self).dismiss(*args, **kwargs)
 
