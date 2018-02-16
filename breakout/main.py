@@ -162,6 +162,7 @@ class BreakoutGame(Widget):
     start_dlg = None
     level_width = 8
     level_height = 5
+    follow_speed = None
 
     def update(self, _dt):
         self.ball.move()
@@ -273,11 +274,16 @@ class BreakoutGame(Widget):
     def follow_ball(self):
         # Here we have the paddle try to hit the ball back.
         # This is just for demo play.
+        if self.follow_speed is None:
+            # we should be able to catch up to the ball if it is traveling
+            # in a vertical slope of 55 degrees or more
+            self.follow_speed = Vector(*self.ball.velocity).length() * 0.57
+
         if self.player.center_x > self.ball.center_x:
-            self.player.x -= 2
+            self.player.x -= self.follow_speed
 
         if self.player.center_x < self.ball.center_x:
-            self.player.x += 2
+            self.player.x += self.follow_speed
 
     def game_is_over(self):
         return self.player_lost()
